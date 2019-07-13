@@ -23,6 +23,9 @@ class App extends Component {
                 this.setState({gifs: result.data});
             });
     }
+    selectGif = (id) => {
+        this.setState({selectedGifId: id});
+    }
     render() {
         return (
             <div>
@@ -33,7 +36,7 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="right-scene">
-                    <GifList gifs={this.state.gifs}/>
+                    <GifList gifs={this.state.gifs} selectGifFunction={this.selectGif}/>
                 </div>
             </div>
         )
